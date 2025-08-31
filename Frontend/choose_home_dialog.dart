@@ -81,7 +81,7 @@ class _ChooseHomeState extends State<ChooseHome> {
                     color: Colors.white,
                     child: GooglePlaceAutoCompleteTextField(
                       textEditingController: placeController,
-                      googleAPIKey: "AIzaSyAdkIcJ0__dbOBgVbQm5UW6-KfCpqRAZMM",
+                      googleAPIKey: ...,
                       inputDecoration: const InputDecoration(
                         labelText: "Address",
                         border: OutlineInputBorder(borderSide: BorderSide.none),
