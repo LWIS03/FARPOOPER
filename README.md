@@ -25,11 +25,10 @@ It’s a fun and lighthearted way to explore gamification, geolocation, authenti
 - 🔑 **Authentication options** – Sign up/login with:
   - Google  
   - Email & password  
-- 🧑‍🤝‍🧑 **Global leaderboard** *(planned/optional)* – Compete with others worldwide.  
 
 ---
 
-## 🛠️ FRONTEND
+### 🛠️ FRONTEND
 
 - **Frontend:** Flutter (Dart)  
 - **State management:** Flutter widgets & providers  
@@ -40,7 +39,7 @@ It’s a fun and lighthearted way to explore gamification, geolocation, authenti
 
 ---
 
-## 📂 Project Structure (Highlights)
+#### 📂 Project Structure (Highlights)
 
 - `main.dart` – App entry point  
 - `MainPage.dart` – Main navigation & UI container  
@@ -68,7 +67,7 @@ It exposes a REST API to manage users, friendships, and “poops” (events), ca
 
 ---
 
-## 🧱 Main Modules & Entities
+### 🧱 Main Modules & Entities
 
 - `User` — app user; includes username, email, UID (from auth), home coordinates, relationships, and user’s poops.
 - `Poop` — an event with name, skinId, points, coordinates, distance from home, and creation date.
@@ -91,16 +90,16 @@ It exposes a REST API to manage users, friendships, and “poops” (events), ca
 > Services used internally: `UserService`, `PoopService`.
 
 ---
-## 🗺️ Data Model Highlights
+### 🗺️ Data Model Highlights
 
-### User (simplified)
+#### User (simplified)
 - `id`, `uid` (external auth uid), `username`, `email`
 - `homeCords`: `Pair<Float, Float>` (latitude/longitude)
 - `poops`: `Set<Poop>`
 - `friends`: `Set<User>` (bi-directional friendship)
 - `dateCreated`, `dateUpdated`
 
-### Poop (simplified)
+#### Poop (simplified)
 - `id`, `skinId`, `name`, `points`
 - `coordenates`: `Pair<Float, Float>` (latitude/longitude)
 - `distanceFromHomeCords`: `Double` (meters or km — depending on service logic)
