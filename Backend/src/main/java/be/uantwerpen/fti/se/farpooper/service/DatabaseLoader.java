@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 @Component
-@Profile("dev") // Esto hace que solo se ejecute si usas el perfil "dev"
+@Profile("dev") /
 public class DatabaseLoader {
 
     private final UserRepository userRepository;
@@ -21,7 +21,7 @@ public class DatabaseLoader {
       //  User user = new User("1234", "test@example.com", "testuser");
         //userRepository.save(user);
 
-        //System.out.println("✅ Datos de prueba cargados:");
-        //System.out.println("🧑 User ID = " + user.getId());
+        //System.out.println("Datos de prueba cargados:");
+        //System.out.println("User ID = " + user.getId());
     }
 }

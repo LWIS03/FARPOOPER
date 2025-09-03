@@ -63,8 +63,7 @@ class _MapPageState extends State<GlobalMap> {
     User? currentUser = FirebaseAuth.instance.currentUser;
     if (currentUser != null) {
       final uid = currentUser.uid;
-      final uri = Uri.parse("http://10.0.2.2:8080/Poops/uid/$uid"); // usa 10.0.2.2 en Android emu
-
+      final uri = Uri.parse("http://10.0.2.2:8080/Poops/uid/$uid"); 
       final resp = await http.get(
         uri,
         headers: {
@@ -212,7 +211,6 @@ class _MapPageState extends State<GlobalMap> {
   }
 
 
-  // Obtener la ubicación actual con permisos
   Future<Position> currentPosition() async {
     final serviceEnabled = await Geolocator.isLocationServiceEnabled();
     if (!serviceEnabled) {

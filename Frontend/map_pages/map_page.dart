@@ -23,7 +23,6 @@ class _MapPageState extends State<MapPage> {
   Position? _initialPosition;
   Timer? _locationUpdateTimer;
 
-  // Helper para evitar setState tras dispose
   void safeSetState(VoidCallback fn) {
     if (!mounted) return;
     setState(fn);
@@ -96,7 +95,7 @@ class _MapPageState extends State<MapPage> {
       );
 
       if (resp.statusCode == 200) {
-        debugPrint("CACAS RECIBIDAS OK: ${resp.body}");
+        debugPrint("POops recived: ${resp.body}");
 
         final List<dynamic> jsonList = jsonDecode(resp.body);
         final Set<GetPoop> poops =

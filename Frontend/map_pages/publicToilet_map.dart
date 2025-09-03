@@ -25,9 +25,7 @@ class _MapPageState extends State<ToiletMap> {
   Position? _initialPosition;
   Timer? _locationUpdateTimer;
 
-  // debounce para Overpass
   Timer? _fetchDebounce;
-  // cache simple por bbox string para evitar repetidos inmediatos
   String? _lastFetchedBboxKey;
 
   void safeSetState(VoidCallback fn) {
@@ -66,13 +64,11 @@ class _MapPageState extends State<ToiletMap> {
     });
   }
 
-  // ========== NUEVO: FETCH DE BAÑOS (Overpass) ==========
   Future<void> _fetchToiletsInBbox(LatLngBounds bbox) async {
-    // Clave para cache simple
     final key =
         '${bbox.southwest.latitude.toStringAsFixed(5)},${bbox.southwest.longitude.toStringAsFixed(5)},'
         '${bbox.northeast.latitude.toStringAsFixed(5)},${bbox.northeast.longitude.toStringAsFixed(5)}';
-    if (_lastFetchedBboxKey == key) return; // misma bbox reciente
+    if (_lastFetchedBboxKey == key) return; 
 
     _lastFetchedBboxKey = key;
 
@@ -110,10 +106,8 @@ out center tags;
       final data = jsonDecode(resp.body) as Map<String, dynamic>;
       final List elements = (data['elements'] as List?) ?? [];
 
-      // Icono para baños
 
 
-      // Construimos markers
       final Set<Marker> toiletMarkers = {};
       for (final e in elements) {
         final m = e as Map<String, dynamic>;
@@ -124,7 +118,6 @@ out center tags;
         final wheel = (tags['toilets:wheelchair'] ?? tags['wheelchair'])?.toString();
         final unisex = tags['toilets:unisex']?.toString();
 
-        // lat/lon pueden venir directo (node) o en center (way/relation)
         final lat = (m['lat'] ?? m['center']?['lat'])?.toDouble();
         final lon = (m['lon'] ?? m['center']?['lon'])?.toDouble();
         if (lat == null || lon == null) continue;
@@ -160,7 +153,6 @@ out center tags;
     }
   }
 
-  // Debounce disparado al parar la cámara
   void _scheduleFetchToilets() {
     _fetchDebounce?.cancel();
     _fetchDebounce = Timer(const Duration(milliseconds: 450), () async {
@@ -168,7 +160,6 @@ out center tags;
         final controller = _mapController;
         if (controller == null) return;
         final bounds = await controller.getVisibleRegion();
-        // Evita bbox inválidos (cuando el mapa aún no está listo)
         if (bounds.northeast.latitude == 0 && bounds.northeast.longitude == 0) return;
         _fetchToiletsInBbox(bounds);
       } catch (e) {

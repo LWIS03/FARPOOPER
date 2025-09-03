@@ -28,7 +28,7 @@ class _MyAppState extends State<MyApp> {
           children: [
             PageView(
               controller: controller,
-              physics: const NeverScrollableScrollPhysics(), // <- evita que capture los gestos
+              physics: const NeverScrollableScrollPhysics(), 
               onPageChanged: (index) {
                 setState(() {
                   currentPageIndex = index;
@@ -99,7 +99,6 @@ class _MyAppState extends State<MyApp> {
           ],
         ),
 
-        // BOTTOM NAV BAR (se mantiene)
         bottomNavigationBar: BottomNavigationBar(
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.wc_rounded), label: 'WCs'),

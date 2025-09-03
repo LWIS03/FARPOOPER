@@ -71,10 +71,9 @@ class _ChooseHomeState extends State<ChooseHome> {
         appBar: AppBar(title: const Text("Choose your home address")),
         body: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.all(12), // margen general
+            padding: const EdgeInsets.all(12),
             child: Column(
               children: [
-                // ====== BARRA DE BÚSQUEDA ARRIBA ======
                 ClipRRect(
                   borderRadius: BorderRadius.circular(12),
                   child: Container(
@@ -121,7 +120,6 @@ class _ChooseHomeState extends State<ChooseHome> {
 
                 const SizedBox(height: 12),
 
-                // ====== MAPA ABAJO REDONDEADO ======
                 Expanded(
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(16),
@@ -151,7 +149,7 @@ class _ChooseHomeState extends State<ChooseHome> {
                     );
 
 
-                    final uri = Uri.parse("http://10.0.2.2:8080/Users/new"); // usa 10.0.2.2 en Android emu
+                    final uri = Uri.parse("http://10.0.2.2:8080/Users/new"); 
                     final resp = await http.put(
                       uri,
                       headers: {

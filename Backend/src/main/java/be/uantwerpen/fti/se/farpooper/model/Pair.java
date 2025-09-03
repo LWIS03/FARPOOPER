@@ -22,6 +22,4 @@ public class Pair<X, Y> {
 
     public Y getSecond() { return second; }
     public void setSecond(Y second) { this.second = second; }
-
-    // Si aún tienes First()/Second(), déjalos, pero usa los get*/set* en nuevo código.
 }
