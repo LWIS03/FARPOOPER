@@ -28,7 +28,7 @@ It’s a fun and lighthearted way to explore gamification, geolocation, authenti
 
 ---
 
-### 🛠️ FRONTEND
+###  FRONTEND
 
 - **Frontend:** Flutter (Dart)  
 - **State management:** Flutter widgets & providers  
@@ -39,7 +39,7 @@ It’s a fun and lighthearted way to explore gamification, geolocation, authenti
 
 ---
 
-#### 📂 Project Structure (Highlights)
+####  Project Structure (Highlights)
 
 - `main.dart` – App entry point  
 - `MainPage.dart` – Main navigation & UI container  
@@ -54,7 +54,7 @@ It’s a fun and lighthearted way to explore gamification, geolocation, authenti
 - `google_login_screen.dart` – UI for Google login  
 - `mail_register.dart` – UI for email registration  
 
-## 🛠️ BACKEND - Fapooper API (Java + Spring Boot)
+##  BACKEND - Fapooper API (Java + Spring Boot)
 
 This is the backend for **Fapooper**, built with **Java 17** and **Spring Boot**.  
 It exposes a REST API to manage users, friendships, and “poops” (events), calculates points based on distance from the user’s home coordinates, and persists data in **PostgreSQL**.
@@ -67,7 +67,7 @@ It exposes a REST API to manage users, friendships, and “poops” (events), ca
 
 ---
 
-### 🧱 Main Modules & Entities
+###  Main Modules & Entities
 
 - `User` — app user; includes username, email, UID (from auth), home coordinates, relationships, and user’s poops.
 - `Poop` — an event with name, skinId, points, coordinates, distance from home, and creation date.
@@ -90,7 +90,7 @@ It exposes a REST API to manage users, friendships, and “poops” (events), ca
 > Services used internally: `UserService`, `PoopService`.
 
 ---
-### 🗺️ Data Model Highlights
+### Data Model Highlights
 
 #### User (simplified)
 - `id`, `uid` (external auth uid), `username`, `email`
@@ -106,7 +106,7 @@ It exposes a REST API to manage users, friendships, and “poops” (events), ca
 - `dateCreated`
 ---
 
-### 🧩 Services
+###  Services
 
 - **`UserService.java`**
   - Orchestrates user lifecycle: creation/lookup, profile edits, and home coordinates management.
@@ -121,7 +121,7 @@ It exposes a REST API to manage users, friendships, and “poops” (events), ca
 > - Distance/points logic lives at the **service** layer to keep controllers thin and repositories focused on I/O.
 > - DTOs isolate the API surface from entity internals.
 
-### 🗃️ Repositories (Spring Data JPA)
+###  Repositories (Spring Data JPA)
 
 - **`UserRepository.java`** — Spring Data JPA interface for `User`.
   - Centralizes user persistence, identity lookup (e.g., by `uid`), and relationship fetches.
