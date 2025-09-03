@@ -1,4 +1,4 @@
-# Fapooper 🚽✨
+# Fapooper
 
 ## TRY IT OUT !!!
 https://drive.google.com/drive/folders/14K4SJQ0idXrlafepCAqvFX4NEnC42ee-?usp=drive_link 
@@ -15,7 +15,7 @@ It’s a fun and lighthearted way to explore gamification, geolocation, authenti
 
 ---
 
-## ✨ Features
+## Features
 
 - 📍 **Set your home location** – Choose where you live using an interactive map.  
 - 🌍 **Real-time maps** – Powered by Google Maps integration.  
